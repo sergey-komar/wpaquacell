@@ -18,10 +18,7 @@
                     <?php endwhile; endif;?>
                    
                 </div>
-                <?php
-                    $image = "background-image: url('./images/about/about.jpg')";
-                  
-                ?>
+              
        
                  <div class="about__img" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/about/about.jpg');"> 
                     <div class="about__inner">
@@ -60,7 +57,7 @@
                    
                 </div>
                 <div class="mission__img">
-                    <img src="<?php echo get_template_directory_uri();?>./assets/images/about/about-girl.png" alt="img">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/images/about/about-girl.png" alt="img">
                 </div>
             </div>
         </div>

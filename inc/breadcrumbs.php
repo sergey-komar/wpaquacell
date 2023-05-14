@@ -1,16 +1,6 @@
 <?php
 
-/**
- * Хлебные крошки для WordPress (breadcrumbs)
- *
- * @param string $sep  Разделитель. По умолчанию ' » '.
- * @param array  $l10n Для локализации. См. переменную `$default_l10n`.
- * @param array  $args Опции. Смотрите переменную `$def_args`.
- *
- * @return void Выводит на экран HTML код
- *
- * version 3.3.3
- */
+
 function kama_breadcrumbs( $sep = '', $l10n = array(), $args = array() ){
 	$kb = new Kama_Breadcrumbs;
 	echo $kb->get_crumbs( $sep, $l10n, $args );
@@ -32,6 +22,7 @@ class Kama_Breadcrumbs {
 		'day'        => '',
 		'attachment' => 'Медиа: %s',
 		'tag'        => 'Записи по метке: <b>%s</b>',
+		
 		'tax_tag'    => '%1$s из "%2$s" по тегу: <b>%3$s</b>',
 		// tax_tag выведет: 'тип_записи из "название_таксы" по тегу: имя_термина'.
 		// Если нужны отдельные холдеры, например только имя термина, пишем так: 'записи по тегу: %3$s'
@@ -39,6 +30,7 @@ class Kama_Breadcrumbs {
 
 	// Параметры по умолчанию
 	static $args = [
+		
 		// выводить крошки на главной странице
 		'on_front_page'   => true,
 		// показывать ли название записи в конце (последний элемент). Для записей, страниц, вложений

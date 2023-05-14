@@ -48,6 +48,38 @@
 .instalation-container__block-text{
     margin-bottom: 1rem;
 }
+.designers-bottom__img img{
+    object-fit: cover;
+}
+.baza-tabs__left-img img{
+    width: 60rem;
+    height: 31rem;
+    object-fit: cover;
+}
+.blog-home__wrapper img{
+    width: 298px;
+    height: 204px;
+    object-fit: cover;
+}
+.kb_sep{
+    position: relative;
+}
+.kb_title::before{
+    display: none;
+}
+.kb_sep::before{
+    position: absolute;
+    content: '';
+    width: 10rem;
+    height: 3rem;
+    background: url(../images/home/arrows-blog.png) no-repeat;
+    top: 7px;
+    left: -5px;
+}
+.kama_breadcrumbs span{
+    margin-left: 8px;
+}
+
 .form__btn{
     display: block;
     margin-left: auto;
@@ -66,20 +98,13 @@
     border-bottom: none;
 }
 .kb_title{
-    margin-left: 2.2rem;
+    margin-left: 15px !important;
+    display: inline-block;
     position: relative;
     color: #3d80d1;
     font-weight: 700;
 }
-.kb_title::before{
-    position: absolute;
-    content: '';
-    width: 10rem;
-    height: 3rem;
-    background: url(../images/home/arrows-blog.png) no-repeat;
-    top: 7px;
-    left: -20px;
-}
+
 
 
 @media(max-width:968px){

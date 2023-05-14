@@ -35,13 +35,13 @@
               </p></span> 
           </div>
           <div class="catalog__img">
-            <a href="#" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-1.jpg');">
+            <a href="<?php echo get_post_type_archive_link('fiberglass'); ?>" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-1.jpg');">
               <div class="catalog__img-title">стеклопластиковые</div>
             </a>
-            <a href="#" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-2.jpg');">
+            <a href="<?php echo get_post_type_archive_link('metal'); ?>" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-2.jpg');">
               <div class="catalog__img-title"> металлические</div>
             </a>
-            <a href="#" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-3.jpg');">
+            <a href="<?php echo get_post_type_archive_link('omus'); ?>" class="catalog__img-item" style="background-image: url('<?php echo  get_template_directory_uri()?>/assets/images/home/corps-3.jpg');">
               <div class="catalog__img-title"> обратного омуса</div>
             </a>
           </div>
@@ -82,102 +82,41 @@
         <div class="blog-home__block">
           <div class="blog-home__inner">
             <h2 class="blog-home__title">Блог и Новости</h2>
-            <a href="#" class="blog-home__link">Перейти ко всем новостям</a>
+            <a href="<?php echo get_post_type_archive_link('news'); ?>" class="blog-home__link">Перейти ко всем новостям</a>
           </div>
           <div class="blog-home__arrows"></div>
         </div>
 
         <div class="blog-home__slider">
           <div class="blog-home__slider-inner">
-            <div class="blog-home__item">
-              <div class="blog-home__wrapper blog-home__wrapper--slider">
-                <img src="<?php echo  get_template_directory_uri()?>/assets/images/home/blog-slider.jpg" alt="img" class="blog-home__item-img">
-                <div class="blog-home__item-calendar">
-                  28 июля 2022
-                </div>
-                <div class="blog-home__slider-block">
-                  <div class="blog-home__item-title">
-                    Условный заголовок статьи который придумал дизайнер
-                  </div>
-                  <p class="blog-home__item-text">
-                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее 
-                  </p>
-                  <a href="#" class="blog-home__item-link">Читать далее</a>
-                </div>
-              </div>
-            </div>
 
+          <?php
+          global $post;
+          $news = new WP_Query([
+            'posts_per_page' => '30',
+            'post_type' => 'news'
+          ])
+          ?>
+          <?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post()?>
             <div class="blog-home__item">
               <div class="blog-home__wrapper blog-home__wrapper--slider">
-                <img src="<?php echo  get_template_directory_uri()?>/assets/images/home/blog-slider.jpg" alt="img" class="blog-home__item-img">
+                <img src="<?php the_field('odna_novost_izobrazhenie');?>" alt="img" class="blog-home__item-img">
                 <div class="blog-home__item-calendar">
-                  28 июля 2022
+                <?php the_time('j F Y')?>
                 </div>
                 <div class="blog-home__slider-block">
                   <div class="blog-home__item-title">
-                    Условный заголовок статьи который придумал дизайнер
+                   <?php the_title();?>
                   </div>
                   <p class="blog-home__item-text">
-                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее 
+                   <?php the_field('odna_novost_tekst');?>
                   </p>
-                  <a href="#" class="blog-home__item-link">Читать далее</a>
+                  <a href="<?php the_permalink()?>" class="blog-home__item-link">Читать далее</a>
                 </div>
               </div>
             </div>
-
-            <div class="blog-home__item">
-              <div class="blog-home__wrapper blog-home__wrapper--slider">
-                <img src="<?php echo  get_template_directory_uri()?>/assets/images/home/blog-slider.jpg" alt="img" class="blog-home__item-img">
-                <div class="blog-home__item-calendar">
-                  28 июля 2022
-                </div>
-                <div class="blog-home__slider-block">
-                  <div class="blog-home__item-title">
-                    Условный заголовок статьи который придумал дизайнер
-                  </div>
-                  <p class="blog-home__item-text">
-                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
-                  </p>
-                  <a href="#" class="blog-home__item-link">Читать далее</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="blog-home__item">
-              <div class="blog-home__wrapper blog-home__wrapper--slider">
-                <img src="<?php echo  get_template_directory_uri()?>/assets/images/home/blog-slider.jpg" alt="img" class="blog-home__item-img">
-                <div class="blog-home__item-calendar">
-                  28 июля 2022
-                </div>
-                <div class="blog-home__slider-block">
-                  <div class="blog-home__item-title">
-                    Условный заголовок статьи который придумал дизайнер
-                  </div>
-                  <p class="blog-home__item-text">
-                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
-                  </p>
-                  <a href="#" class="blog-home__item-link">Читать далее</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="blog-home__item">
-              <div class="blog-home__wrapper blog-home__wrapper--slider">
-                <img src="<?php echo  get_template_directory_uri()?>/assets/images/home/blog-slider.jpg" alt="img" class="blog-home__item-img">
-                <div class="blog-home__item-calendar">
-                  28 июля 2022
-                </div>
-                <div class="blog-home__slider-block">
-                  <div class="blog-home__item-title">
-                    Условный заголовок статьи который придумал дизайнер
-                  </div>
-                  <p class="blog-home__item-text">
-                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее
-                  </p>
-                  <a href="#" class="blog-home__item-link">Читать далее</a>
-                </div>
-              </div>
-            </div>
+          <?php endwhile; endif;?>
+          <?php wp_reset_postdata();?>
 
           </div>
         </div>
